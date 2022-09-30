@@ -89,3 +89,8 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+
+##############################
+## Others
+##############################
+app/src/main/resources/dataset.csv
