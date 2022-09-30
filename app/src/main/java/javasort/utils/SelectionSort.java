@@ -13,6 +13,13 @@ package javasort.utils;
  * @author André Gabriel <a href="https://github.com/Andre0n">GitHub</a>
  */
 public class SelectionSort {
+
+  /**
+   * Prevents instantiation.
+   */
+  private SelectionSort() {
+  }
+
   /**
    * Swaps the two specified elements in the specified array.
    *
