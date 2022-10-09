@@ -75,12 +75,11 @@ public class QuickSort {
    * @param <T>   the class of the objects in the list
    */
   private static <T extends Comparable<T>> void sort(final T[] A, final int left, final int right) {
-    if (left > right) {
-      return;
+    if (left < right) {
+      final int pivot = randomPartition(A, left, right);
+      sort(A, left, pivot - 1);
+      sort(A, pivot + 1, right);
     }
-    final int pi = partition(A, left, right);
-    sort(A, left, pi - 1);
-    sort(A, pi + 1, right);
   }
 
   /**
