@@ -83,6 +83,22 @@ public class QuickSort {
   }
 
   /**
+   * Randomize the array to avoid the basically ordered sequences
+   *
+   * @param A The array to be sorted
+   * @param left  The first index of an array
+   * @param right The last index of an array
+   * @param <T>  the class of the objects in the array
+   * @return the partition index of the array
+   */
+  private static <T extends Comparable<T>> int randomPartition(T[] A, int left, int right ) {
+    int randomIndex = left + (int) (Math.random() * (right - left + 1));
+    swap(A, randomIndex, right);
+    return partition(A, left, right);
+  }
+
+
+  /**
    * Partitioning the elements into two sub-arrays.
    * <p>
    * It works by selecting a 'pivot' element from the array and partitioning the
