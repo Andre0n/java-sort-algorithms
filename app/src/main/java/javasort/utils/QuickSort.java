@@ -100,17 +100,16 @@ public class QuickSort {
    */
   private static <T extends Comparable<T>> int partition(final T[] A, final int left, final int right) {
     final T pivot = A[right];
-    int pIndex = left;
-    for (int i = left; i < right; ++i) {
-      // Compare based on the given order
-      final boolean compare = is_ascending ? A[i].compareTo(pivot) <= 0 : A[i].compareTo(pivot) >= 0;
-      if (compare) {
-        swap(A, i, pIndex);
-        pIndex++;
+    int i = left;
+    for (int j = left; j < right; ++j) {
+      boolean comparison = is_ascending ? A[j].compareTo(pivot) < 0 : A[j].compareTo(pivot) > 0;
+      if (comparison) {
+        swap(A, j, i);
+        i++;
       }
     }
-    swap(A, pIndex, right);
-    return pIndex;
+    swap(A, i, right);
+    return i;
   }
 }
 
